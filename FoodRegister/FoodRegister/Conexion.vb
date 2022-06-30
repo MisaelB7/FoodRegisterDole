@@ -14,7 +14,7 @@ Public Class conexion
     Public Sub conectar()
         Try
             conexion.Open()
-            MessageBox.Show("Conexión exitosa")
+            'MessageBox.Show("Conexión exitosa")
         Catch ex As Exception
             MessageBox.Show("Error conexion de base de datos")
         Finally
@@ -31,6 +31,28 @@ Public Class conexion
             cmb.Connection = conexion
 
             If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function buscarDepartamento(departamento As String) As DataTable
+        Try
+            conexion.Open()
+            Dim cmb As New SqlCommand("buscar_departamento", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@departamento", departamento)
+            If cmb.ExecuteNonQuery <> 0 Then
                 Dim dt As New DataTable
                 Dim da As New SqlDataAdapter(cmb)
                 da.Fill(dt)

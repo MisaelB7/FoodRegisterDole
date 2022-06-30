@@ -22,4 +22,27 @@ Public Class AgregarDepto
         End Try
 
     End Sub
+
+    Private Sub buscarDepartamento()
+        Dim departamento As String
+        Try
+            departamento = txtNombreEmpleado.Text
+            dt = conexion.buscarDepartamento(departamento)
+
+            If dt.Rows.Count <> 0 Then
+                dataListado.DataSource = dt
+                conexion.conexion.Close()
+
+            Else
+                dataListado.DataSource = Nothing
+                conexion.conexion.Close()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub txtNombreEmpleado_TextChanged(sender As Object, e As EventArgs) Handles txtNombreEmpleado.TextChanged
+        buscarDepartamento()
+    End Sub
 End Class

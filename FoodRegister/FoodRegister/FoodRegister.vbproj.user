@@ -7,8 +7,5 @@
     <Compile Update="Formularios\AgregarDepto.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Formularios\AgregarEmpleado.vb">
-      <SubType>Form</SubType>
-    </Compile>
   </ItemGroup>
 </Project>

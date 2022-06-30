@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AgregarDepto
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class AgregarDepto
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.txtNombreEmpleado = New System.Windows.Forms.TextBox()
         Me.lblDepto = New System.Windows.Forms.Label()
@@ -72,7 +72,7 @@ Partial Class AgregarDepto
         Me.btnBorrar.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btnBorrar.ForeColor = System.Drawing.Color.White
         Me.btnBorrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnBorrar.Location = New System.Drawing.Point(622, 46)
+        Me.btnBorrar.Location = New System.Drawing.Point(626, 46)
         Me.btnBorrar.Name = "btnBorrar"
         Me.btnBorrar.Size = New System.Drawing.Size(100, 38)
         Me.btnBorrar.TabIndex = 10
@@ -108,7 +108,7 @@ Partial Class AgregarDepto
         Me.btnEditar.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btnEditar.ForeColor = System.Drawing.Color.White
         Me.btnEditar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnEditar.Location = New System.Drawing.Point(518, 46)
+        Me.btnEditar.Location = New System.Drawing.Point(519, 46)
         Me.btnEditar.Name = "btnEditar"
         Me.btnEditar.Size = New System.Drawing.Size(88, 38)
         Me.btnEditar.TabIndex = 12
@@ -128,6 +128,7 @@ Partial Class AgregarDepto
         Me.Controls.Add(Me.lblDepto)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "AgregarDepto"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "AgregarDepto"
         CType(Me.dataListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
