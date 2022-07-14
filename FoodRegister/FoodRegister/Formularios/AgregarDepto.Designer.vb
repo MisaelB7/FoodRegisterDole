@@ -22,7 +22,7 @@ Partial Class AgregarDepto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.txtNombreEmpleado = New System.Windows.Forms.TextBox()
+        Me.txtNombreDepartamento = New System.Windows.Forms.TextBox()
         Me.lblDepto = New System.Windows.Forms.Label()
         Me.lblTitulo = New System.Windows.Forms.Label()
         Me.btnBorrar = New System.Windows.Forms.Button()
@@ -32,13 +32,13 @@ Partial Class AgregarDepto
         CType(Me.dataListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'txtNombreEmpleado
+        'txtNombreDepartamento
         '
-        Me.txtNombreEmpleado.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtNombreEmpleado.Location = New System.Drawing.Point(168, 52)
-        Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
-        Me.txtNombreEmpleado.Size = New System.Drawing.Size(176, 30)
-        Me.txtNombreEmpleado.TabIndex = 4
+        Me.txtNombreDepartamento.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.txtNombreDepartamento.Location = New System.Drawing.Point(168, 52)
+        Me.txtNombreDepartamento.Name = "txtNombreDepartamento"
+        Me.txtNombreDepartamento.Size = New System.Drawing.Size(176, 30)
+        Me.txtNombreDepartamento.TabIndex = 4
         '
         'lblDepto
         '
@@ -124,7 +124,7 @@ Partial Class AgregarDepto
         Me.Controls.Add(Me.dataListado)
         Me.Controls.Add(Me.btnBorrar)
         Me.Controls.Add(Me.btnRegistrar)
-        Me.Controls.Add(Me.txtNombreEmpleado)
+        Me.Controls.Add(Me.txtNombreDepartamento)
         Me.Controls.Add(Me.lblDepto)
         Me.Controls.Add(Me.lblTitulo)
         Me.Name = "AgregarDepto"
@@ -136,7 +136,7 @@ Partial Class AgregarDepto
 
     End Sub
 
-    Friend WithEvents txtNombreEmpleado As TextBox
+    Friend WithEvents txtNombreDepartamento As TextBox
     Friend WithEvents lblDepto As Label
     Friend WithEvents lblTitulo As Label
     Friend WithEvents btnBorrar As Button
