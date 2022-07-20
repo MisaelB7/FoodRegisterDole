@@ -105,4 +105,24 @@ Public Class conexion
         End Try
     End Function
 
+    Public Function editarDepartamento(iddepartamento As Integer, departamento As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("editar_departamento", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@iddepartamento", iddepartamento)
+            cmb.Parameters.AddWithValue("@departamento", departamento)
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+
+    End Function
 End Class

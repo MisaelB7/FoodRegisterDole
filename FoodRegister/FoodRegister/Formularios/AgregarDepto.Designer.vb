@@ -29,6 +29,7 @@ Partial Class AgregarDepto
         Me.btnRegistrar = New System.Windows.Forms.Button()
         Me.dataListado = New System.Windows.Forms.DataGridView()
         Me.btnEditar = New System.Windows.Forms.Button()
+        Me.btnBuscar = New System.Windows.Forms.Button()
         CType(Me.dataListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -37,7 +38,7 @@ Partial Class AgregarDepto
         Me.txtNombreDepartamento.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.txtNombreDepartamento.Location = New System.Drawing.Point(168, 52)
         Me.txtNombreDepartamento.Name = "txtNombreDepartamento"
-        Me.txtNombreDepartamento.Size = New System.Drawing.Size(176, 30)
+        Me.txtNombreDepartamento.Size = New System.Drawing.Size(162, 30)
         Me.txtNombreDepartamento.TabIndex = 4
         '
         'lblDepto
@@ -72,9 +73,9 @@ Partial Class AgregarDepto
         Me.btnBorrar.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btnBorrar.ForeColor = System.Drawing.Color.White
         Me.btnBorrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnBorrar.Location = New System.Drawing.Point(626, 46)
+        Me.btnBorrar.Location = New System.Drawing.Point(639, 46)
         Me.btnBorrar.Name = "btnBorrar"
-        Me.btnBorrar.Size = New System.Drawing.Size(100, 38)
+        Me.btnBorrar.Size = New System.Drawing.Size(83, 38)
         Me.btnBorrar.TabIndex = 10
         Me.btnBorrar.Text = "Borrar"
         Me.btnBorrar.UseVisualStyleBackColor = False
@@ -85,9 +86,9 @@ Partial Class AgregarDepto
         Me.btnRegistrar.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btnRegistrar.ForeColor = System.Drawing.Color.White
         Me.btnRegistrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnRegistrar.Location = New System.Drawing.Point(367, 46)
+        Me.btnRegistrar.Location = New System.Drawing.Point(440, 46)
         Me.btnRegistrar.Name = "btnRegistrar"
-        Me.btnRegistrar.Size = New System.Drawing.Size(136, 38)
+        Me.btnRegistrar.Size = New System.Drawing.Size(109, 38)
         Me.btnRegistrar.TabIndex = 9
         Me.btnRegistrar.Text = "Registrar"
         Me.btnRegistrar.UseVisualStyleBackColor = False
@@ -108,18 +109,32 @@ Partial Class AgregarDepto
         Me.btnEditar.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btnEditar.ForeColor = System.Drawing.Color.White
         Me.btnEditar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnEditar.Location = New System.Drawing.Point(519, 46)
+        Me.btnEditar.Location = New System.Drawing.Point(555, 46)
         Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(88, 38)
+        Me.btnEditar.Size = New System.Drawing.Size(78, 38)
         Me.btnEditar.TabIndex = 12
         Me.btnEditar.Text = "Editar"
         Me.btnEditar.UseVisualStyleBackColor = False
+        '
+        'btnBuscar
+        '
+        Me.btnBuscar.BackColor = System.Drawing.Color.FromArgb(CType(CType(117, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(68, Byte), Integer))
+        Me.btnBuscar.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.btnBuscar.ForeColor = System.Drawing.Color.White
+        Me.btnBuscar.ImeMode = System.Windows.Forms.ImeMode.NoControl
+        Me.btnBuscar.Location = New System.Drawing.Point(336, 46)
+        Me.btnBuscar.Name = "btnBuscar"
+        Me.btnBuscar.Size = New System.Drawing.Size(98, 38)
+        Me.btnBuscar.TabIndex = 13
+        Me.btnBuscar.Text = "Buscar"
+        Me.btnBuscar.UseVisualStyleBackColor = False
         '
         'AgregarDepto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(738, 419)
+        Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.btnEditar)
         Me.Controls.Add(Me.dataListado)
         Me.Controls.Add(Me.btnBorrar)
@@ -143,4 +158,5 @@ Partial Class AgregarDepto
     Friend WithEvents btnRegistrar As Button
     Friend WithEvents dataListado As DataGridView
     Friend WithEvents btnEditar As Button
+    Friend WithEvents btnBuscar As Button
 End Class
