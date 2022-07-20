@@ -81,6 +81,7 @@ Public Class AgregarDepto
             insertarDepartamento()
             limpiar()
             validarBotones()
+            mostrar_departamento()
         End If
 
     End Sub
@@ -107,6 +108,11 @@ Public Class AgregarDepto
     Private Sub btnBorrar_Click(sender As Object, e As EventArgs) Handles btnBorrar.Click
         If txtNombreDepartamento.Text = "" Then
             MessageBox.Show("Por favor elija un departamento.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            eliminarDepartamento()
+            limpiar()
+            validarBotones()
+            mostrar_departamento()
         End If
     End Sub
 
@@ -133,8 +139,16 @@ Public Class AgregarDepto
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        editarDepartamento()
-        mostrar_departamento()
+        If txtNombreDepartamento.Text = "" Then
+            MessageBox.Show("Por favor escriba el nombre de un departamento.", "Campo Vacio", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        Else
+            editarDepartamento()
+            limpiar()
+            validarBotones()
+            mostrar_departamento()
+        End If
+
+
     End Sub
 
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
@@ -143,6 +157,9 @@ Public Class AgregarDepto
 
     Private Sub txtNombreDepartamento_TextChanged(sender As Object, e As EventArgs) Handles txtNombreDepartamento.TextChanged
         validarBotones()
+        If txtNombreDepartamento.Text = "" Then
+            mostrar_departamento()
+        End If
     End Sub
 
     Private Sub dataListado_Click(sender As Object, e As DataGridViewCellEventArgs) Handles dataListado.CellClick
