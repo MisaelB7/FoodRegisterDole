@@ -173,4 +173,8 @@ Public Class AgregarDepto
         End Try
 
     End Sub
+
+    Private Sub btnFormEmpleados_Click(sender As Object, e As EventArgs) Handles btnFormEmpleados.Click
+        AgregarEmpleado.Show()
+    End Sub
 End Class

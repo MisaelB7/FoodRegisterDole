@@ -10,6 +10,7 @@ Public Class conexion
     Public dr As SqlDataReader
     Private dv As New DataView
     Public datos As DataSet
+    Public dt As DataTable
 
     Public Sub conectar()
         Try
@@ -124,5 +125,34 @@ Public Class conexion
             conexion.Close()
         End Try
 
+    End Function
+
+    Public Function llenarComboDepartamento(sql As String, cbo As ComboBox)
+        Try
+            conexion.Open()
+
+            cmb = New SqlCommand
+            da = New SqlDataAdapter
+            dt = New DataTable
+
+            With cmb
+                .Connection = conexion
+                .CommandText = sql
+            End With
+
+            With da
+                .SelectCommand = cmb
+                .Fill(dt)
+            End With
+
+            cbo.DataSource = dt
+            cbo.DisplayMember = dt.Columns(1).ColumnName
+            cbo.ValueMember = dt.Columns(0).ColumnName
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conexion.Close()
+        End Try
     End Function
 End Class
