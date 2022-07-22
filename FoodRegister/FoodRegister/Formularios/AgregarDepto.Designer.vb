@@ -30,7 +30,6 @@ Partial Class AgregarDepto
         Me.dataListado = New System.Windows.Forms.DataGridView()
         Me.btnEditar = New System.Windows.Forms.Button()
         Me.btnBuscar = New System.Windows.Forms.Button()
-        Me.btnFormEmpleados = New System.Windows.Forms.Button()
         CType(Me.dataListado, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -130,25 +129,11 @@ Partial Class AgregarDepto
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = False
         '
-        'btnFormEmpleados
-        '
-        Me.btnFormEmpleados.BackColor = System.Drawing.Color.FromArgb(CType(CType(117, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(68, Byte), Integer))
-        Me.btnFormEmpleados.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.btnFormEmpleados.ForeColor = System.Drawing.Color.White
-        Me.btnFormEmpleados.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnFormEmpleados.Location = New System.Drawing.Point(599, 110)
-        Me.btnFormEmpleados.Name = "btnFormEmpleados"
-        Me.btnFormEmpleados.Size = New System.Drawing.Size(123, 38)
-        Me.btnFormEmpleados.TabIndex = 14
-        Me.btnFormEmpleados.Text = "Empleados"
-        Me.btnFormEmpleados.UseVisualStyleBackColor = False
-        '
         'AgregarDepto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(738, 419)
-        Me.Controls.Add(Me.btnFormEmpleados)
         Me.Controls.Add(Me.btnBuscar)
         Me.Controls.Add(Me.btnEditar)
         Me.Controls.Add(Me.dataListado)
@@ -174,5 +159,4 @@ Partial Class AgregarDepto
     Friend WithEvents dataListado As DataGridView
     Friend WithEvents btnEditar As Button
     Friend WithEvents btnBuscar As Button
-    Friend WithEvents btnFormEmpleados As Button
 End Class

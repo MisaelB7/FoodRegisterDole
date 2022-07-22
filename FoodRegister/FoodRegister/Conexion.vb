@@ -127,7 +127,7 @@ Public Class conexion
 
     End Function
 
-    Public Function llenarComboDepartamento(sql As String, cbo As ComboBox)
+    Public Function llenarComboboxEmpleados(sql As String, cbo As ComboBox)
         Try
             conexion.Open()
 
@@ -151,6 +151,31 @@ Public Class conexion
 
         Catch ex As Exception
             MsgBox(ex.Message)
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function insertarEmpleado(idempleado As String, nombre As String, apellido As String, nombreapellido As String, identidad As String, fkdepartamento As String, fktipocontrato As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("insertar_empleado", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@idempleado", idempleado)
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+            cmb.Parameters.AddWithValue("@apellido", apellido)
+            cmb.Parameters.AddWithValue("@nombreapellido", nombreapellido)
+            cmb.Parameters.AddWithValue("@identidad", identidad)
+            cmb.Parameters.AddWithValue("@fkdepartamento", fkdepartamento)
+            cmb.Parameters.AddWithValue("@fktipocontrato", fktipocontrato)
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
         Finally
             conexion.Close()
         End Try

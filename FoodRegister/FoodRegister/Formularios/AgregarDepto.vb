@@ -61,7 +61,7 @@ Public Class AgregarDepto
 
         mayus = txtNombreDepartamento.Text
         Dim departamento As String = StrConv(mayus, VbStrConv.ProperCase)
-        txtNombreDepartamento.Text = departamento
+
         Try
             If conexion.insertarDepartamento(departamento) Then
                 limpiar()
@@ -174,7 +174,18 @@ Public Class AgregarDepto
 
     End Sub
 
-    Private Sub btnFormEmpleados_Click(sender As Object, e As EventArgs) Handles btnFormEmpleados.Click
-        AgregarEmpleado.Show()
+    Private Sub txtNombreDepartamento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombreDepartamento.KeyPress
+        If Not Char.IsLetter(e.KeyChar) _
+                     AndAlso Not Char.IsControl(e.KeyChar) _
+                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+
+        If Char.IsSeparator(e.KeyChar) Then
+            'Que anule la entrada de texto y aparezca un msgbox.
+            MessageBox.Show("No se permiten los espacios.", "Error!")
+            e.Handled = True
+        End If
     End Sub
+
 End Class

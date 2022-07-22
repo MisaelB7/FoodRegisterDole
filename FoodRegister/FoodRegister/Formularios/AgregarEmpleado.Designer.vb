@@ -38,7 +38,9 @@ Partial Class AgregarEmpleado
         Me.lblDepto = New System.Windows.Forms.Label()
         Me.lblContrato = New System.Windows.Forms.Label()
         Me.cmbDepartamento = New System.Windows.Forms.ComboBox()
-        Me.cbmContrato = New System.Windows.Forms.ComboBox()
+        Me.cmbContrato = New System.Windows.Forms.ComboBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnBuscar
@@ -220,26 +222,47 @@ Partial Class AgregarEmpleado
         '
         Me.cmbDepartamento.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.cmbDepartamento.FormattingEnabled = True
+        Me.cmbDepartamento.Items.AddRange(New Object() {"Seleccionar"})
         Me.cmbDepartamento.Location = New System.Drawing.Point(173, 278)
         Me.cmbDepartamento.Name = "cmbDepartamento"
         Me.cmbDepartamento.Size = New System.Drawing.Size(162, 31)
         Me.cmbDepartamento.TabIndex = 29
         '
-        'cbmContrato
+        'cmbContrato
         '
-        Me.cbmContrato.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.cbmContrato.FormattingEnabled = True
-        Me.cbmContrato.Location = New System.Drawing.Point(173, 330)
-        Me.cbmContrato.Name = "cbmContrato"
-        Me.cbmContrato.Size = New System.Drawing.Size(162, 31)
-        Me.cbmContrato.TabIndex = 30
+        Me.cmbContrato.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
+        Me.cmbContrato.FormattingEnabled = True
+        Me.cmbContrato.Location = New System.Drawing.Point(173, 330)
+        Me.cmbContrato.Name = "cmbContrato"
+        Me.cmbContrato.Size = New System.Drawing.Size(162, 31)
+        Me.cmbContrato.TabIndex = 30
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(352, 294)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(41, 15)
+        Me.Label1.TabIndex = 31
+        Me.Label1.Text = "Label1"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(352, 346)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(41, 15)
+        Me.Label2.TabIndex = 32
+        Me.Label2.Text = "Label2"
         '
         'AgregarEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(738, 419)
-        Me.Controls.Add(Me.cbmContrato)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.cmbContrato)
         Me.Controls.Add(Me.cmbDepartamento)
         Me.Controls.Add(Me.lblContrato)
         Me.Controls.Add(Me.lblDepto)
@@ -279,5 +302,7 @@ Partial Class AgregarEmpleado
     Friend WithEvents lblDepto As Label
     Friend WithEvents lblContrato As Label
     Friend WithEvents cmbDepartamento As ComboBox
-    Friend WithEvents cbmContrato As ComboBox
+    Friend WithEvents cmbContrato As ComboBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
 End Class
