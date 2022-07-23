@@ -180,4 +180,49 @@ Public Class conexion
             conexion.Close()
         End Try
     End Function
+
+    Public Function editarEmpleado(idempleado As String, nombre As String, apellido As String, nombreapellido As String, identidad As String, fkdepartamento As String, fktipocontrato As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("editar_empleado", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@idempleado", idempleado)
+            cmb.Parameters.AddWithValue("@nombre", nombre)
+            cmb.Parameters.AddWithValue("@apellido", apellido)
+            cmb.Parameters.AddWithValue("@nombreapellido", nombreapellido)
+            cmb.Parameters.AddWithValue("@identidad", identidad)
+            cmb.Parameters.AddWithValue("@fkdepartamento", fkdepartamento)
+            cmb.Parameters.AddWithValue("@fktipocontrato", fktipocontrato)
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+
+    End Function
+
+    Public Function eliminarEmpleado(idempleado As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("borrar_empleado", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@idempleado", idempleado)
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
 End Class

@@ -48,6 +48,7 @@ Public Class AgregarDepto
     End Sub
 
     Private Sub validarBotones()
+
         If txtNombreDepartamento.Text = "" Then
             btnEditar.Enabled = False
             btnRegistrar.Enabled = False
@@ -91,7 +92,7 @@ Public Class AgregarDepto
 
         mayus = txtNombreDepartamento.Text
         Dim departamento As String = StrConv(mayus, VbStrConv.ProperCase)
-        txtNombreDepartamento.Text = departamento
+
 
         Try
             If conexion.eliminarDepartamento(departamento) Then
@@ -147,7 +148,6 @@ Public Class AgregarDepto
             validarBotones()
             mostrar_departamento()
         End If
-
 
     End Sub
 
