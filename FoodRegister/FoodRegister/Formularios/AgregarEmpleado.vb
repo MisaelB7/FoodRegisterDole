@@ -21,16 +21,14 @@ Public Class AgregarEmpleado
         Dim tipocontrato As String
 
         departamento = Convert.ToString(idDepto)
-        Label1.Text = Convert.ToString(idDepto)
-
         tipocontrato = Convert.ToString(idTipoContrato)
-        Label2.Text = Convert.ToString(idTipoContrato)
+
 
         Dim idempleado As String = txtCCosto.Text
         Dim nombre As String = StrConv(txtNombreEmpleado.Text, VbStrConv.ProperCase)
         Dim apellido As String = StrConv(txtApellidoEmpleado.Text, VbStrConv.ProperCase)
         Dim nombreApellido = nombre + " " + apellido
-        Dim identidad As String = StrConv(txtIdentidad.Text, VbStrConv.ProperCase)
+        Dim identidad As String = txtIdentidad.Text
         Dim fkdepartamento = departamento
         Dim fktipocontrato = tipocontrato
 
@@ -50,7 +48,7 @@ Public Class AgregarEmpleado
         insertarEmpleado()
     End Sub
 
-    Private Sub editarDepartamento()
+    Private Sub editarEmpleado()
         Dim idDepto As Object = cmbDepartamento.SelectedValue
         Dim idTipoContrato As Object = cmbContrato.SelectedValue
 
@@ -58,16 +56,13 @@ Public Class AgregarEmpleado
         Dim tipocontrato As String
 
         departamento = Convert.ToString(idDepto)
-        Label1.Text = Convert.ToString(idDepto)
-
         tipocontrato = Convert.ToString(idTipoContrato)
-        Label2.Text = Convert.ToString(idTipoContrato)
 
         Dim idempleado As String = txtCCosto.Text
         Dim nombre As String = StrConv(txtNombreEmpleado.Text, VbStrConv.ProperCase)
         Dim apellido As String = StrConv(txtApellidoEmpleado.Text, VbStrConv.ProperCase)
         Dim nombreApellido = nombre + " " + apellido
-        Dim identidad As String = StrConv(txtIdentidad.Text, VbStrConv.ProperCase)
+        Dim identidad As String = txtIdentidad.Text
         Dim fkdepartamento = departamento
         Dim fktipocontrato = tipocontrato
 
@@ -114,7 +109,7 @@ Public Class AgregarEmpleado
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        editarDepartamento()
+        editarEmpleado()
     End Sub
 
     Private Sub eliminarEmpleado()
@@ -122,7 +117,7 @@ Public Class AgregarEmpleado
         Dim idempleado = txtCCosto.Text
 
         Try
-            If conexion.eliminarDepartamento(idempleado) Then
+            If conexion.eliminarEmpleado(idempleado) Then
                 MessageBox.Show("El Empleado ha sido eliminado.", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
             Else
@@ -135,5 +130,19 @@ Public Class AgregarEmpleado
 
     Private Sub btnBorrar_Click(sender As Object, e As EventArgs) Handles btnBorrar.Click
         eliminarEmpleado()
+    End Sub
+
+    Private Sub buscarEmpleado()
+        Dim idempleado = txtCCosto.Text
+        Dim sql As String
+        sql = "SELECT nombre, apellidos, identidad, fkDepartamento, fkTipoContratos From Empleados WHERE IdEmpleado= " + idempleado
+        Try
+            conexion.buscarEmpleado(sql, txtNombreEmpleado, txtApellidoEmpleado, txtIdentidad, cmbDepartamento, cmbContrato)
+        Catch ex As Exception
+            MessageBox.Show("Error")
+        End Try
+    End Sub
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        buscarEmpleado()
     End Sub
 End Class

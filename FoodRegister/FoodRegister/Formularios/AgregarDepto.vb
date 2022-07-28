@@ -5,7 +5,6 @@ Public Class AgregarDepto
     Private Sub AgregarDepto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conexion.conectar()
         mostrar_departamento()
-        validarBotones()
     End Sub
 
     Public Sub mostrar_departamento()
@@ -27,7 +26,7 @@ Public Class AgregarDepto
     Private Sub buscarDepartamento()
         Dim departamento As String
         Try
-            departamento = txtNombreDepartamento.Text
+            departamento = StrConv(txtNombreDepartamento.Text, VbStrConv.ProperCase)
             dt = conexion.buscarDepartamento(departamento)
 
             If dt.Rows.Count <> 0 Then
@@ -38,6 +37,7 @@ Public Class AgregarDepto
                 dataListado.DataSource = Nothing
                 conexion.conexion.Close()
             End If
+            txtNombreDepartamento.Text = departamento
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -47,21 +47,10 @@ Public Class AgregarDepto
         txtNombreDepartamento.Clear()
     End Sub
 
-    Private Sub validarBotones()
 
-        If txtNombreDepartamento.Text = "" Then
-            btnEditar.Enabled = False
-            btnRegistrar.Enabled = False
-        Else
-            btnEditar.Enabled = True
-            btnRegistrar.Enabled = True
-        End If
-    End Sub
     Private Sub insertarDepartamento()
-        Dim mayus As String
 
-        mayus = txtNombreDepartamento.Text
-        Dim departamento As String = StrConv(mayus, VbStrConv.ProperCase)
+        Dim departamento As String = StrConv(txtNombreDepartamento.Text, VbStrConv.ProperCase)
 
         Try
             If conexion.insertarDepartamento(departamento) Then
@@ -81,18 +70,15 @@ Public Class AgregarDepto
         Else
             insertarDepartamento()
             limpiar()
-            validarBotones()
+
             mostrar_departamento()
         End If
 
     End Sub
 
     Private Sub eliminarDepartamento()
-        Dim mayus As String
 
-        mayus = txtNombreDepartamento.Text
-        Dim departamento As String = StrConv(mayus, VbStrConv.ProperCase)
-
+        Dim departamento As String = StrConv(txtNombreDepartamento.Text, VbStrConv.ProperCase)
 
         Try
             If conexion.eliminarDepartamento(departamento) Then
@@ -112,27 +98,25 @@ Public Class AgregarDepto
         Else
             eliminarDepartamento()
             limpiar()
-            validarBotones()
+
             mostrar_departamento()
         End If
     End Sub
 
     Private Sub editarDepartamento()
         Dim iddepartamento As Integer
-        Dim mayus As String
 
         Dim fila = dataListado.CurrentRow.Index
         iddepartamento = dataListado.Rows(fila).Cells(0).Value
 
-        mayus = txtNombreDepartamento.Text
-        Dim departamento As String = StrConv(mayus, VbStrConv.ProperCase)
+        Dim departamento As String = StrConv(txtNombreDepartamento.Text, VbStrConv.ProperCase)
         txtNombreDepartamento.Text = departamento
 
         Try
             If conexion.editarDepartamento(iddepartamento, departamento) Then
                 MessageBox.Show("Departamento editado correctamente", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
-                MessageBox.Show("Error al editar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("No se ha podido editar el departamento", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -141,11 +125,10 @@ Public Class AgregarDepto
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
         If txtNombreDepartamento.Text = "" Then
-            MessageBox.Show("Por favor escriba el nombre de un departamento.", "Campo Vacio", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Por favor escriba el nombre del departamento.", "Campo Vacio", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
             editarDepartamento()
             limpiar()
-            validarBotones()
             mostrar_departamento()
         End If
 
@@ -156,7 +139,7 @@ Public Class AgregarDepto
     End Sub
 
     Private Sub txtNombreDepartamento_TextChanged(sender As Object, e As EventArgs) Handles txtNombreDepartamento.TextChanged
-        validarBotones()
+
         If txtNombreDepartamento.Text = "" Then
             mostrar_departamento()
         End If

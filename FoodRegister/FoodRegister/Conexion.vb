@@ -225,4 +225,30 @@ Public Class conexion
             conexion.Close()
         End Try
     End Function
+
+    Public Function buscarEmpleado(sql As String, nombreEmpleado As TextBox, apellidoEmpleado As TextBox, identidad As TextBox, departamento As ComboBox, tipoContrato As ComboBox)
+        cmb = New SqlCommand(sql, conexion)
+        conexion.Open()
+        Try
+
+            dr = cmb.ExecuteReader()
+            If (dr.Read()) Then
+                nombreEmpleado.Text = dr("nombre").ToString()
+                apellidoEmpleado.Text = dr("apellidos").ToString()
+                identidad.Text = dr("identidad").ToString
+                departamento.SelectedValue = dr("fkDepartamento")
+                tipoContrato.SelectedValue = dr("fkTipoContratos")
+            Else
+                MessageBox.Show("Usuario no encontrado, compruebe el id", "Error de búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            conexion.Close()
+        End Try
+
+
+    End Function
+
+
 End Class

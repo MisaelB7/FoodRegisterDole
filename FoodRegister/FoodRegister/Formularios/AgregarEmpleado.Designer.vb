@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class AgregarEmpleado
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class AgregarEmpleado
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.btnBuscar = New System.Windows.Forms.Button()
         Me.btnEditar = New System.Windows.Forms.Button()
@@ -39,8 +39,6 @@ Partial Class AgregarEmpleado
         Me.lblContrato = New System.Windows.Forms.Label()
         Me.cmbDepartamento = New System.Windows.Forms.ComboBox()
         Me.cmbContrato = New System.Windows.Forms.ComboBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'btnBuscar
@@ -237,31 +235,11 @@ Partial Class AgregarEmpleado
         Me.cmbContrato.Size = New System.Drawing.Size(162, 31)
         Me.cmbContrato.TabIndex = 30
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(352, 294)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(41, 15)
-        Me.Label1.TabIndex = 31
-        Me.Label1.Text = "Label1"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(352, 346)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(41, 15)
-        Me.Label2.TabIndex = 32
-        Me.Label2.Text = "Label2"
-        '
         'AgregarEmpleado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(738, 419)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.cmbContrato)
         Me.Controls.Add(Me.cmbDepartamento)
         Me.Controls.Add(Me.lblContrato)
@@ -303,6 +281,4 @@ Partial Class AgregarEmpleado
     Friend WithEvents lblContrato As Label
     Friend WithEvents cmbDepartamento As ComboBox
     Friend WithEvents cmbContrato As ComboBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
 End Class
