@@ -24,33 +24,48 @@ Partial Class Menu
     Private Sub InitializeComponent()
         Me.btnDeptos = New System.Windows.Forms.Button()
         Me.btnEmpleados = New System.Windows.Forms.Button()
+        Me.btnConsumo = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnDeptos
         '
-        Me.btnDeptos.Location = New System.Drawing.Point(305, 50)
+        Me.btnDeptos.Location = New System.Drawing.Point(349, 67)
+        Me.btnDeptos.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnDeptos.Name = "btnDeptos"
-        Me.btnDeptos.Size = New System.Drawing.Size(140, 35)
+        Me.btnDeptos.Size = New System.Drawing.Size(160, 47)
         Me.btnDeptos.TabIndex = 0
         Me.btnDeptos.Text = "departamentos"
         Me.btnDeptos.UseVisualStyleBackColor = True
         '
         'btnEmpleados
         '
-        Me.btnEmpleados.Location = New System.Drawing.Point(305, 151)
+        Me.btnEmpleados.Location = New System.Drawing.Point(349, 201)
+        Me.btnEmpleados.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnEmpleados.Name = "btnEmpleados"
-        Me.btnEmpleados.Size = New System.Drawing.Size(140, 35)
+        Me.btnEmpleados.Size = New System.Drawing.Size(160, 47)
         Me.btnEmpleados.TabIndex = 1
         Me.btnEmpleados.Text = "empleados"
         Me.btnEmpleados.UseVisualStyleBackColor = True
         '
+        'btnConsumo
+        '
+        Me.btnConsumo.Location = New System.Drawing.Point(349, 298)
+        Me.btnConsumo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.btnConsumo.Name = "btnConsumo"
+        Me.btnConsumo.Size = New System.Drawing.Size(160, 47)
+        Me.btnConsumo.TabIndex = 2
+        Me.btnConsumo.Text = "Consumo"
+        Me.btnConsumo.UseVisualStyleBackColor = True
+        '
         'Menu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(914, 600)
+        Me.Controls.Add(Me.btnConsumo)
         Me.Controls.Add(Me.btnEmpleados)
         Me.Controls.Add(Me.btnDeptos)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Menu"
         Me.Text = "Menu"
         Me.ResumeLayout(False)
@@ -59,4 +74,5 @@ Partial Class Menu
 
     Friend WithEvents btnDeptos As Button
     Friend WithEvents btnEmpleados As Button
+    Friend WithEvents btnConsumo As Button
 End Class

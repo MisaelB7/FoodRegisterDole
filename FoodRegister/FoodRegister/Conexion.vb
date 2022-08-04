@@ -230,7 +230,6 @@ Public Class conexion
         cmb = New SqlCommand(sql, conexion)
         conexion.Open()
         Try
-
             dr = cmb.ExecuteReader()
             If (dr.Read()) Then
                 nombreEmpleado.Text = dr("nombre").ToString()
@@ -246,9 +245,30 @@ Public Class conexion
         Finally
             conexion.Close()
         End Try
-
-
     End Function
 
+    Public Function insertarConsumo(fecha As Date, fkempleado As String, desayuno As String, almuerzo As String, cena As String, comida As String)
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("insertar_consumo", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@fecha", fecha)
+            cmb.Parameters.AddWithValue("@fkempleado", fkempleado)
+            cmb.Parameters.AddWithValue("@desayuno", desayuno)
+            cmb.Parameters.AddWithValue("@almuerzo", almuerzo)
+            cmb.Parameters.AddWithValue("@cena", cena)
+            cmb.Parameters.AddWithValue("@comida", comida)
+            If cmb.ExecuteNonQuery Then
+                Return True
+            Else
+                Return False
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return False
+        Finally
+            conexion.Close()
+        End Try
+    End Function
 
 End Class

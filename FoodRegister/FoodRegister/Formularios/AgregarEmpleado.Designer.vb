@@ -47,9 +47,10 @@ Partial Class AgregarEmpleado
         Me.btnBuscar.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btnBuscar.ForeColor = System.Drawing.Color.White
         Me.btnBuscar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnBuscar.Location = New System.Drawing.Point(528, 46)
+        Me.btnBuscar.Location = New System.Drawing.Point(603, 61)
+        Me.btnBuscar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnBuscar.Name = "btnBuscar"
-        Me.btnBuscar.Size = New System.Drawing.Size(98, 38)
+        Me.btnBuscar.Size = New System.Drawing.Size(112, 51)
         Me.btnBuscar.TabIndex = 20
         Me.btnBuscar.Text = "Buscar"
         Me.btnBuscar.UseVisualStyleBackColor = False
@@ -60,9 +61,10 @@ Partial Class AgregarEmpleado
         Me.btnEditar.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btnEditar.ForeColor = System.Drawing.Color.White
         Me.btnEditar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnEditar.Location = New System.Drawing.Point(643, 46)
+        Me.btnEditar.Location = New System.Drawing.Point(735, 61)
+        Me.btnEditar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnEditar.Name = "btnEditar"
-        Me.btnEditar.Size = New System.Drawing.Size(78, 38)
+        Me.btnEditar.Size = New System.Drawing.Size(89, 51)
         Me.btnEditar.TabIndex = 19
         Me.btnEditar.Text = "Editar"
         Me.btnEditar.UseVisualStyleBackColor = False
@@ -73,9 +75,10 @@ Partial Class AgregarEmpleado
         Me.btnBorrar.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btnBorrar.ForeColor = System.Drawing.Color.White
         Me.btnBorrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnBorrar.Location = New System.Drawing.Point(643, 96)
+        Me.btnBorrar.Location = New System.Drawing.Point(708, 128)
+        Me.btnBorrar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnBorrar.Name = "btnBorrar"
-        Me.btnBorrar.Size = New System.Drawing.Size(83, 38)
+        Me.btnBorrar.Size = New System.Drawing.Size(122, 51)
         Me.btnBorrar.TabIndex = 18
         Me.btnBorrar.Text = "Borrar"
         Me.btnBorrar.UseVisualStyleBackColor = False
@@ -86,9 +89,10 @@ Partial Class AgregarEmpleado
         Me.btnRegistrar.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btnRegistrar.ForeColor = System.Drawing.Color.White
         Me.btnRegistrar.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.btnRegistrar.Location = New System.Drawing.Point(528, 96)
+        Me.btnRegistrar.Location = New System.Drawing.Point(561, 128)
+        Me.btnRegistrar.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnRegistrar.Name = "btnRegistrar"
-        Me.btnRegistrar.Size = New System.Drawing.Size(109, 38)
+        Me.btnRegistrar.Size = New System.Drawing.Size(141, 51)
         Me.btnRegistrar.TabIndex = 17
         Me.btnRegistrar.Text = "Registrar"
         Me.btnRegistrar.UseVisualStyleBackColor = False
@@ -96,9 +100,10 @@ Partial Class AgregarEmpleado
         'txtCCosto
         '
         Me.txtCCosto.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtCCosto.Location = New System.Drawing.Point(116, 52)
+        Me.txtCCosto.Location = New System.Drawing.Point(133, 69)
+        Me.txtCCosto.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCCosto.Name = "txtCCosto"
-        Me.txtCCosto.Size = New System.Drawing.Size(162, 30)
+        Me.txtCCosto.Size = New System.Drawing.Size(185, 36)
         Me.txtCCosto.TabIndex = 16
         '
         'lblCCosto
@@ -107,9 +112,9 @@ Partial Class AgregarEmpleado
         Me.lblCCosto.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblCCosto.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblCCosto.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblCCosto.Location = New System.Drawing.Point(17, 53)
+        Me.lblCCosto.Location = New System.Drawing.Point(19, 71)
         Me.lblCCosto.Name = "lblCCosto"
-        Me.lblCCosto.Size = New System.Drawing.Size(93, 25)
+        Me.lblCCosto.Size = New System.Drawing.Size(119, 33)
         Me.lblCCosto.TabIndex = 15
         Me.lblCCosto.Text = "C. Costo:"
         Me.lblCCosto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -120,9 +125,9 @@ Partial Class AgregarEmpleado
         Me.lblTitulo.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblTitulo.ForeColor = System.Drawing.Color.FromArgb(CType(CType(38, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(122, Byte), Integer))
         Me.lblTitulo.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblTitulo.Location = New System.Drawing.Point(253, 9)
+        Me.lblTitulo.Location = New System.Drawing.Point(289, 12)
         Me.lblTitulo.Name = "lblTitulo"
-        Me.lblTitulo.Size = New System.Drawing.Size(269, 25)
+        Me.lblTitulo.Size = New System.Drawing.Size(347, 33)
         Me.lblTitulo.TabIndex = 14
         Me.lblTitulo.Text = "Registro de Departamentos"
         Me.lblTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -130,9 +135,10 @@ Partial Class AgregarEmpleado
         'txtNombreEmpleado
         '
         Me.txtNombreEmpleado.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtNombreEmpleado.Location = New System.Drawing.Point(116, 108)
+        Me.txtNombreEmpleado.Location = New System.Drawing.Point(133, 144)
+        Me.txtNombreEmpleado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
-        Me.txtNombreEmpleado.Size = New System.Drawing.Size(162, 30)
+        Me.txtNombreEmpleado.Size = New System.Drawing.Size(185, 36)
         Me.txtNombreEmpleado.TabIndex = 22
         '
         'lblNombre
@@ -141,9 +147,9 @@ Partial Class AgregarEmpleado
         Me.lblNombre.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblNombre.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblNombre.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblNombre.Location = New System.Drawing.Point(17, 109)
+        Me.lblNombre.Location = New System.Drawing.Point(19, 145)
         Me.lblNombre.Name = "lblNombre"
-        Me.lblNombre.Size = New System.Drawing.Size(92, 25)
+        Me.lblNombre.Size = New System.Drawing.Size(118, 33)
         Me.lblNombre.TabIndex = 21
         Me.lblNombre.Text = "Nombre:"
         Me.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -151,9 +157,10 @@ Partial Class AgregarEmpleado
         'txtApellidoEmpleado
         '
         Me.txtApellidoEmpleado.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtApellidoEmpleado.Location = New System.Drawing.Point(116, 164)
+        Me.txtApellidoEmpleado.Location = New System.Drawing.Point(133, 219)
+        Me.txtApellidoEmpleado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtApellidoEmpleado.Name = "txtApellidoEmpleado"
-        Me.txtApellidoEmpleado.Size = New System.Drawing.Size(162, 30)
+        Me.txtApellidoEmpleado.Size = New System.Drawing.Size(185, 36)
         Me.txtApellidoEmpleado.TabIndex = 24
         '
         'lblApellido
@@ -162,9 +169,9 @@ Partial Class AgregarEmpleado
         Me.lblApellido.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblApellido.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblApellido.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblApellido.Location = New System.Drawing.Point(17, 165)
+        Me.lblApellido.Location = New System.Drawing.Point(19, 220)
         Me.lblApellido.Name = "lblApellido"
-        Me.lblApellido.Size = New System.Drawing.Size(92, 25)
+        Me.lblApellido.Size = New System.Drawing.Size(119, 33)
         Me.lblApellido.TabIndex = 23
         Me.lblApellido.Text = "Apellido:"
         Me.lblApellido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -172,9 +179,10 @@ Partial Class AgregarEmpleado
         'txtIdentidad
         '
         Me.txtIdentidad.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtIdentidad.Location = New System.Drawing.Point(116, 224)
+        Me.txtIdentidad.Location = New System.Drawing.Point(133, 299)
+        Me.txtIdentidad.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtIdentidad.Name = "txtIdentidad"
-        Me.txtIdentidad.Size = New System.Drawing.Size(162, 30)
+        Me.txtIdentidad.Size = New System.Drawing.Size(185, 36)
         Me.txtIdentidad.TabIndex = 26
         '
         'lblIdentidad
@@ -183,9 +191,9 @@ Partial Class AgregarEmpleado
         Me.lblIdentidad.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblIdentidad.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblIdentidad.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblIdentidad.Location = New System.Drawing.Point(17, 225)
+        Me.lblIdentidad.Location = New System.Drawing.Point(19, 300)
         Me.lblIdentidad.Name = "lblIdentidad"
-        Me.lblIdentidad.Size = New System.Drawing.Size(102, 25)
+        Me.lblIdentidad.Size = New System.Drawing.Size(132, 33)
         Me.lblIdentidad.TabIndex = 25
         Me.lblIdentidad.Text = "Identidad:"
         Me.lblIdentidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -196,9 +204,9 @@ Partial Class AgregarEmpleado
         Me.lblDepto.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblDepto.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblDepto.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblDepto.Location = New System.Drawing.Point(17, 279)
+        Me.lblDepto.Location = New System.Drawing.Point(19, 372)
         Me.lblDepto.Name = "lblDepto"
-        Me.lblDepto.Size = New System.Drawing.Size(150, 25)
+        Me.lblDepto.Size = New System.Drawing.Size(192, 33)
         Me.lblDepto.TabIndex = 27
         Me.lblDepto.Text = "Departamento:"
         Me.lblDepto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -209,9 +217,9 @@ Partial Class AgregarEmpleado
         Me.lblContrato.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.lblContrato.ForeColor = System.Drawing.SystemColors.ControlText
         Me.lblContrato.ImeMode = System.Windows.Forms.ImeMode.NoControl
-        Me.lblContrato.Location = New System.Drawing.Point(17, 336)
+        Me.lblContrato.Location = New System.Drawing.Point(19, 448)
         Me.lblContrato.Name = "lblContrato"
-        Me.lblContrato.Size = New System.Drawing.Size(141, 25)
+        Me.lblContrato.Size = New System.Drawing.Size(183, 33)
         Me.lblContrato.TabIndex = 28
         Me.lblContrato.Text = "Tipo Contrato:"
         Me.lblContrato.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -221,25 +229,27 @@ Partial Class AgregarEmpleado
         Me.cmbDepartamento.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.cmbDepartamento.FormattingEnabled = True
         Me.cmbDepartamento.Items.AddRange(New Object() {"Seleccionar"})
-        Me.cmbDepartamento.Location = New System.Drawing.Point(173, 278)
+        Me.cmbDepartamento.Location = New System.Drawing.Point(240, 372)
+        Me.cmbDepartamento.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cmbDepartamento.Name = "cmbDepartamento"
-        Me.cmbDepartamento.Size = New System.Drawing.Size(162, 31)
+        Me.cmbDepartamento.Size = New System.Drawing.Size(185, 37)
         Me.cmbDepartamento.TabIndex = 29
         '
         'cmbContrato
         '
         Me.cmbContrato.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.cmbContrato.FormattingEnabled = True
-        Me.cmbContrato.Location = New System.Drawing.Point(173, 330)
+        Me.cmbContrato.Location = New System.Drawing.Point(240, 444)
+        Me.cmbContrato.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.cmbContrato.Name = "cmbContrato"
-        Me.cmbContrato.Size = New System.Drawing.Size(162, 31)
+        Me.cmbContrato.Size = New System.Drawing.Size(185, 37)
         Me.cmbContrato.TabIndex = 30
         '
         'AgregarEmpleado
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(738, 419)
+        Me.ClientSize = New System.Drawing.Size(843, 559)
         Me.Controls.Add(Me.cmbContrato)
         Me.Controls.Add(Me.cmbDepartamento)
         Me.Controls.Add(Me.lblContrato)
@@ -257,6 +267,7 @@ Partial Class AgregarEmpleado
         Me.Controls.Add(Me.txtCCosto)
         Me.Controls.Add(Me.lblCCosto)
         Me.Controls.Add(Me.lblTitulo)
+        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "AgregarEmpleado"
         Me.Text = "AgregarEmpleado"
         Me.ResumeLayout(False)
