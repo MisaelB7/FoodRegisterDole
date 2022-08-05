@@ -55,6 +55,44 @@ Public Class AgregarConsumo
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
-        insertarConsumo()
+        If txtCCosto.Text = "" Or txtPrecio.Text = "" Then
+            MessageBox.Show("Debe ingresar ambos datos para poder registrar su consumoo", "Datos necesarios", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            insertarConsumo()
+        End If
+    End Sub
+
+    Private Sub txtCCosto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCCosto.KeyPress
+        detectarNumeros(sender, e)
+        detectarEspacios(sender, e)
+    End Sub
+
+    Private Sub txtPrecio_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtPrecio.KeyPress
+        detectarEspacios(sender, e)
+        detectarNumeros(sender, e)
+    End Sub
+
+    Private Sub detectarLetras(sender As Object, e As KeyPressEventArgs)
+        If Not Char.IsLetter(e.KeyChar) _
+                     AndAlso Not Char.IsControl(e.KeyChar) _
+                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub detectarNumeros(sender As Object, e As KeyPressEventArgs)
+        If Not Char.IsNumber(e.KeyChar) _
+                     AndAlso Not Char.IsControl(e.KeyChar) _
+                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub detectarEspacios(sender As Object, e As KeyPressEventArgs)
+        If Char.IsSeparator(e.KeyChar) Then
+            'Que anule la entrada de texto y aparezca un msgbox.
+            MessageBox.Show("No se permiten los espacios.", "Error!")
+            e.Handled = True
+        End If
     End Sub
 End Class

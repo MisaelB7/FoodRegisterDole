@@ -77,35 +77,21 @@ Public Class AgregarEmpleado
         End Try
     End Sub
     Private Sub txtCCosto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCCosto.KeyPress
-        If Not Char.IsNumber(e.KeyChar) _
-                     AndAlso Not Char.IsControl(e.KeyChar) _
-                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
-            e.Handled = True
-        End If
+        detectarEspacios(sender, e)
+        detectarNumeros(sender, e)
     End Sub
 
     Private Sub txtNombreEmpleado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombreEmpleado.KeyPress
-        If Not Char.IsLetter(e.KeyChar) _
-                     AndAlso Not Char.IsControl(e.KeyChar) _
-                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
-            e.Handled = True
-        End If
+        detectarLetras(sender, e)
     End Sub
 
     Private Sub txtApellidoEmpleado_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtApellidoEmpleado.KeyPress
-        If Not Char.IsLetter(e.KeyChar) _
-                     AndAlso Not Char.IsControl(e.KeyChar) _
-                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
-            e.Handled = True
-        End If
+        detectarLetras(sender, e)
     End Sub
 
     Private Sub txtIdentidad_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtIdentidad.KeyPress
-        If Not Char.IsNumber(e.KeyChar) _
-                     AndAlso Not Char.IsControl(e.KeyChar) _
-                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
-            e.Handled = True
-        End If
+        detectarNumeros(sender, e)
+        detectarEspacios(sender, e)
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
@@ -144,5 +130,29 @@ Public Class AgregarEmpleado
     End Sub
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
         buscarEmpleado()
+    End Sub
+
+    Private Sub detectarLetras(sender As Object, e As KeyPressEventArgs)
+        If Not Char.IsLetter(e.KeyChar) _
+                     AndAlso Not Char.IsControl(e.KeyChar) _
+                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub detectarNumeros(sender As Object, e As KeyPressEventArgs)
+        If Not Char.IsNumber(e.KeyChar) _
+                     AndAlso Not Char.IsControl(e.KeyChar) _
+                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
+
+    Private Sub detectarEspacios(sender As Object, e As KeyPressEventArgs)
+        If Char.IsSeparator(e.KeyChar) Then
+            'Que anule la entrada de texto y aparezca un msgbox.
+            MessageBox.Show("No se permiten los espacios.", "Error!")
+            e.Handled = True
+        End If
     End Sub
 End Class

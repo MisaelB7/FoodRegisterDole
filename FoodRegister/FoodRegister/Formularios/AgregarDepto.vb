@@ -158,12 +158,11 @@ Public Class AgregarDepto
     End Sub
 
     Private Sub txtNombreDepartamento_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtNombreDepartamento.KeyPress
-        If Not Char.IsLetter(e.KeyChar) _
-                     AndAlso Not Char.IsControl(e.KeyChar) _
-                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
-            e.Handled = True
-        End If
+        detectarEspacios(sender, e)
+        detectarLetras(sender, e)
+    End Sub
 
+    Private Sub detectarEspacios(sender As Object, e As KeyPressEventArgs)
         If Char.IsSeparator(e.KeyChar) Then
             'Que anule la entrada de texto y aparezca un msgbox.
             MessageBox.Show("No se permiten los espacios.", "Error!")
@@ -171,4 +170,11 @@ Public Class AgregarDepto
         End If
     End Sub
 
+    Private Sub detectarLetras(sender As Object, e As KeyPressEventArgs)
+        If Not Char.IsLetter(e.KeyChar) _
+                     AndAlso Not Char.IsControl(e.KeyChar) _
+                     AndAlso Not Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = True
+        End If
+    End Sub
 End Class
