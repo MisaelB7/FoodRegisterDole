@@ -120,16 +120,21 @@ Public Class AgregarEmpleado
 
     Private Sub buscarEmpleado()
         Dim idempleado = txtCCosto.Text
+        Dim nombre As String = StrConv(txtNombreEmpleado.Text, VbStrConv.ProperCase)
         Dim sql As String
-        sql = "SELECT nombre, apellidos, identidad, fkDepartamento, fkTipoContratos From Empleados WHERE IdEmpleado= " + idempleado
+        sql = "SELECT idempleado, nombre, apellidos, identidad, fkDepartamento, fkTipoContratos From Empleados WHERE IdEmpleado LIKE '%'  +'" + idempleado + "'  + '%' OR Nombre LIKE '%'  + '" + nombre + "' + '%'"
         Try
-            conexion.buscarEmpleado(sql, txtNombreEmpleado, txtApellidoEmpleado, txtIdentidad, cmbDepartamento, cmbContrato)
+            conexion.buscarEmpleado(sql, txtCCosto, txtNombreEmpleado, txtApellidoEmpleado, txtIdentidad, cmbDepartamento, cmbContrato)
         Catch ex As Exception
             MessageBox.Show("Error")
         End Try
     End Sub
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        buscarEmpleado()
+        If txtCCosto.Text = "" And txtNombreEmpleado.Text = "" Then
+            MessageBox.Show("Por favor ingrese el centro de costo del empleado.", "Campo Necesario", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            buscarEmpleado()
+        End If
     End Sub
 
     Private Sub detectarLetras(sender As Object, e As KeyPressEventArgs)

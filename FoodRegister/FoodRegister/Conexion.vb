@@ -226,12 +226,13 @@ Public Class conexion
         End Try
     End Function
 
-    Public Function buscarEmpleado(sql As String, nombreEmpleado As TextBox, apellidoEmpleado As TextBox, identidad As TextBox, departamento As ComboBox, tipoContrato As ComboBox)
+    Public Function buscarEmpleado(sql As String, ccosto As TextBox, nombreEmpleado As TextBox, apellidoEmpleado As TextBox, identidad As TextBox, departamento As ComboBox, tipoContrato As ComboBox)
         cmb = New SqlCommand(sql, conexion)
         conexion.Open()
         Try
             dr = cmb.ExecuteReader()
             If (dr.Read()) Then
+                ccosto.Text = dr("idempleado").ToString
                 nombreEmpleado.Text = dr("nombre").ToString()
                 apellidoEmpleado.Text = dr("apellidos").ToString()
                 identidad.Text = dr("identidad").ToString
