@@ -10,4 +10,8 @@
     Private Sub btnConsumo_Click(sender As Object, e As EventArgs) Handles btnConsumo.Click
         AgregarConsumo.Show()
     End Sub
+
+    Private Sub btnConsultas_Click(sender As Object, e As EventArgs) Handles btnConsultas.Click
+        ConsultarRegistros.Show()
+    End Sub
 End Class

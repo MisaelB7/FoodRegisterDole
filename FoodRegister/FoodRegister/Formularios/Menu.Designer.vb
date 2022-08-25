@@ -25,6 +25,7 @@ Partial Class Menu
         Me.btnDeptos = New System.Windows.Forms.Button()
         Me.btnEmpleados = New System.Windows.Forms.Button()
         Me.btnConsumo = New System.Windows.Forms.Button()
+        Me.btnConsultas = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnDeptos
@@ -57,11 +58,21 @@ Partial Class Menu
         Me.btnConsumo.Text = "Consumo"
         Me.btnConsumo.UseVisualStyleBackColor = True
         '
+        'btnConsultas
+        '
+        Me.btnConsultas.Location = New System.Drawing.Point(349, 362)
+        Me.btnConsultas.Name = "btnConsultas"
+        Me.btnConsultas.Size = New System.Drawing.Size(160, 55)
+        Me.btnConsultas.TabIndex = 3
+        Me.btnConsultas.Text = "Consultas"
+        Me.btnConsultas.UseVisualStyleBackColor = True
+        '
         'Menu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 20.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(914, 600)
+        Me.Controls.Add(Me.btnConsultas)
         Me.Controls.Add(Me.btnConsumo)
         Me.Controls.Add(Me.btnEmpleados)
         Me.Controls.Add(Me.btnDeptos)
@@ -75,4 +86,5 @@ Partial Class Menu
     Friend WithEvents btnDeptos As Button
     Friend WithEvents btnEmpleados As Button
     Friend WithEvents btnConsumo As Button
+    Friend WithEvents btnConsultas As Button
 End Class

@@ -5,7 +5,7 @@ Public Class AgregarEmpleado
     Dim sql As String
 
     Private Sub AgregarEmpleado_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        sql = "select * From Departamentos Order By Departamento"
+        sql = "select * From Departamentos Order By idDepartamento"
         conexion.llenarComboboxEmpleados(sql, cmbDepartamento)
 
         sql = "select * From TipoContratos"
@@ -32,16 +32,20 @@ Public Class AgregarEmpleado
         Dim fkdepartamento = departamento
         Dim fktipocontrato = tipocontrato
 
-        Try
-            If conexion.insertarEmpleado(idempleado, nombre, apellido, nombreApellido, identidad, fkdepartamento, fktipocontrato) Then
+        If cmbDepartamento.Text = "Seleccione.." Then
+            MessageBox.Show("Por favor seleccione un departamento.", "No ha seleccionado departamento", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Try
+                If conexion.insertarEmpleado(idempleado, nombre, apellido, nombreApellido, identidad, fkdepartamento, fktipocontrato) Then
 
-                MessageBox.Show("Empleado registrado correctamente", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Else
-                MessageBox.Show("Error al registrar el empleado", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+                    MessageBox.Show("Empleado registrado correctamente", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Error al registrar el empleado", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
@@ -52,11 +56,8 @@ Public Class AgregarEmpleado
         Dim idDepto As Object = cmbDepartamento.SelectedValue
         Dim idTipoContrato As Object = cmbContrato.SelectedValue
 
-        Dim departamento As String
-        Dim tipocontrato As String
-
-        departamento = Convert.ToString(idDepto)
-        tipocontrato = Convert.ToString(idTipoContrato)
+        Dim departamento = Convert.ToString(idDepto)
+        Dim tipocontrato = Convert.ToString(idTipoContrato)
 
         Dim idempleado As String = txtCCosto.Text
         Dim nombre As String = StrConv(txtNombreEmpleado.Text, VbStrConv.ProperCase)
@@ -66,15 +67,19 @@ Public Class AgregarEmpleado
         Dim fkdepartamento = departamento
         Dim fktipocontrato = tipocontrato
 
-        Try
-            If conexion.editarEmpleado(idempleado, nombre, apellido, nombreApellido, identidad, fkdepartamento, fktipocontrato) Then
-                MessageBox.Show("Empleado actualizado correctamente", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Else
-                MessageBox.Show("Error al editar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End If
-        Catch ex As Exception
-            MsgBox(ex.Message)
-        End Try
+        If cmbDepartamento.Text = "Seleccione.." Then
+            MessageBox.Show("Por favor seleccione un departamento.", "No ha seleccionado departamento", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            Try
+                If conexion.editarEmpleado(idempleado, nombre, apellido, nombreApellido, identidad, fkdepartamento, fktipocontrato) Then
+                    MessageBox.Show("Empleado actualizado correctamente", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Else
+                    MessageBox.Show("Error al editar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                End If
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+        End If
     End Sub
     Private Sub txtCCosto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCCosto.KeyPress
         detectarEspacios(sender, e)
@@ -160,4 +165,5 @@ Public Class AgregarEmpleado
             e.Handled = True
         End If
     End Sub
+
 End Class

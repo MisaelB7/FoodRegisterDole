@@ -10,7 +10,7 @@ Public Class AgregarDepto
     Public Sub mostrar_departamento()
         Try
             Dim func As New conexion
-            dt = func.mostrar_departamento
+            dt = func.mostrarDepartamento
             If dt.Rows.Count <> 0 Then
                 dataListado.DataSource = dt
                 dataListado.ColumnHeadersVisible = True

@@ -23,7 +23,7 @@ Public Class conexion
         End Try
     End Sub
 
-    Public Function mostrar_departamento() As DataTable
+    Public Function mostrarDepartamento() As DataTable
         Try
             conexion.Open()
             cmb = New SqlCommand("mostrar_departamento", conexion)
@@ -248,16 +248,14 @@ Public Class conexion
         End Try
     End Function
 
-    Public Function insertarConsumo(fecha As Date, fkempleado As String, desayuno As String, almuerzo As String, cena As String, comida As String)
+    Public Function insertarConsumo(fecha As Date, fkempleado As String, precio As String, comida As String)
         Try
             conexion.Open()
             cmb = New SqlCommand("insertar_consumo", conexion)
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@fecha", fecha)
             cmb.Parameters.AddWithValue("@fkempleado", fkempleado)
-            cmb.Parameters.AddWithValue("@desayuno", desayuno)
-            cmb.Parameters.AddWithValue("@almuerzo", almuerzo)
-            cmb.Parameters.AddWithValue("@cena", cena)
+            cmb.Parameters.AddWithValue("@costo", precio)
             cmb.Parameters.AddWithValue("@comida", comida)
             If cmb.ExecuteNonQuery Then
                 Return True
@@ -272,4 +270,98 @@ Public Class conexion
         End Try
     End Function
 
+    Public Function mostrarConsumo()
+        Try
+            conexion.Open()
+            cmb = New SqlCommand("mostrar_consumo", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+
+            cmb.Connection = conexion
+
+            If cmb.ExecuteNonQuery Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function bucarConsumo(fechaInicial As Date, fechaFinal As Date) As DataTable
+        Try
+            conexion.Open()
+            Dim cmb As New SqlCommand("buscar_consumoFecha", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@fechaInicial", fechaInicial)
+            cmb.Parameters.AddWithValue("@fechaFinal", fechaFinal)
+            If cmb.ExecuteNonQuery <> 0 Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function bucarConsumoID(fechaInicial As Date, fechaFinal As Date, ccosto As String) As DataTable
+        Try
+            conexion.Open()
+            Dim cmb As New SqlCommand("buscar_consumoIdEmpleado", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@fechaInicial", fechaInicial)
+            cmb.Parameters.AddWithValue("@fechaFinal", fechaFinal)
+            cmb.Parameters.AddWithValue("@fkempleado", ccosto)
+            If cmb.ExecuteNonQuery <> 0 Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function bucarConsumoDepto(fechaInicial As Date, fechaFinal As Date, departamento As String) As DataTable
+        Try
+            conexion.Open()
+            Dim cmb As New SqlCommand("buscar_consumoDepartamento", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@fechaInicial", fechaInicial)
+            cmb.Parameters.AddWithValue("@fechaFinal", fechaFinal)
+            cmb.Parameters.AddWithValue("@departamento", departamento)
+            If cmb.ExecuteNonQuery <> 0 Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
 End Class

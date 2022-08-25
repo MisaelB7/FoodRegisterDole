@@ -15,34 +15,30 @@ Public Class AgregarConsumo
 
         Dim fkempleado = txtCCosto.Text
         Dim precio = txtPrecio.Text
-        Dim desayuno, almuerzo, cena As String
 
-        desayuno = precio
-        almuerzo = precio
-        cena = precio
-        If horaActual >= 4 And horaActual <= 9 Then
+        If horaActual >= 4 And horaActual <= 10 Then
             comida = "desayuno"
             Try
-                If conexion.insertarConsumo(fechaActual, fkempleado, desayuno, almuerzo, cena, comida) Then
-                    MessageBox.Show("Se ha ingresado su desayuno correctamente.", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                If conexion.insertarConsumo(fechaActual, fkempleado, precio, comida) Then
+                    MessageBox.Show("Se ha ingresado su desayuno correctamente, si previamente ingreso otro, este sera agregado como cargo extra.", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
-        ElseIf horaActual >= 11 And horaActual <= 13 Then
+        ElseIf horaActual >= 11 And horaActual <= 14 Then
             comida = "almuerzo"
             Try
-                If conexion.insertarConsumo(fechaActual, fkempleado, desayuno, almuerzo, cena, comida) Then
-                    MessageBox.Show("Se ha ingresado su almuerzo correctamente.", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                If conexion.insertarConsumo(fechaActual, fkempleado, precio, comida) Then
+                    MessageBox.Show("Se ha ingresado su almuerzo correctamente, si previamente ingreso otro, este sera agregado como cargo extra.", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
-        ElseIf horaActual >= 17 And horaActual <= 23 Then
+        ElseIf horaActual >= 17 And horaActual <= 21 Then
             comida = "cena"
             Try
-                If conexion.insertarConsumo(fechaActual, fkempleado, desayuno, almuerzo, cena, comida) Then
-                    MessageBox.Show("Se ha ingresado su cena correctamente.", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                If conexion.insertarConsumo(fechaActual, fkempleado, precio, comida) Then
+                    MessageBox.Show("Se ha ingresado su cena correctamente, si previamente ingreso otra, este sera agregado como cargo extra.", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 End If
             Catch ex As Exception
                 MsgBox(ex.Message)

@@ -100,7 +100,7 @@ Partial Class AgregarEmpleado
         'txtCCosto
         '
         Me.txtCCosto.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtCCosto.Location = New System.Drawing.Point(133, 69)
+        Me.txtCCosto.Location = New System.Drawing.Point(240, 71)
         Me.txtCCosto.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCCosto.Name = "txtCCosto"
         Me.txtCCosto.Size = New System.Drawing.Size(185, 36)
@@ -135,7 +135,7 @@ Partial Class AgregarEmpleado
         'txtNombreEmpleado
         '
         Me.txtNombreEmpleado.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtNombreEmpleado.Location = New System.Drawing.Point(133, 144)
+        Me.txtNombreEmpleado.Location = New System.Drawing.Point(240, 145)
         Me.txtNombreEmpleado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
         Me.txtNombreEmpleado.Size = New System.Drawing.Size(185, 36)
@@ -157,7 +157,7 @@ Partial Class AgregarEmpleado
         'txtApellidoEmpleado
         '
         Me.txtApellidoEmpleado.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtApellidoEmpleado.Location = New System.Drawing.Point(133, 219)
+        Me.txtApellidoEmpleado.Location = New System.Drawing.Point(240, 229)
         Me.txtApellidoEmpleado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtApellidoEmpleado.Name = "txtApellidoEmpleado"
         Me.txtApellidoEmpleado.Size = New System.Drawing.Size(185, 36)
@@ -179,7 +179,7 @@ Partial Class AgregarEmpleado
         'txtIdentidad
         '
         Me.txtIdentidad.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
-        Me.txtIdentidad.Location = New System.Drawing.Point(133, 299)
+        Me.txtIdentidad.Location = New System.Drawing.Point(240, 300)
         Me.txtIdentidad.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtIdentidad.Name = "txtIdentidad"
         Me.txtIdentidad.Size = New System.Drawing.Size(185, 36)
@@ -226,6 +226,7 @@ Partial Class AgregarEmpleado
         '
         'cmbDepartamento
         '
+        Me.cmbDepartamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbDepartamento.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.cmbDepartamento.FormattingEnabled = True
         Me.cmbDepartamento.Items.AddRange(New Object() {"Seleccionar"})
@@ -237,6 +238,7 @@ Partial Class AgregarEmpleado
         '
         'cmbContrato
         '
+        Me.cmbContrato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbContrato.Font = New System.Drawing.Font("Bahnschrift", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.cmbContrato.FormattingEnabled = True
         Me.cmbContrato.Location = New System.Drawing.Point(240, 444)
