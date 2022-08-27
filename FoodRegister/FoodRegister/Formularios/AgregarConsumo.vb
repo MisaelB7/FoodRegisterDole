@@ -13,10 +13,10 @@ Public Class AgregarConsumo
         Dim horaActual = Hour(fechaHoraActual)
         Dim fechaActual = Format(fechaHoraActual, "dd/MM/yyyy")
 
-        Dim fkempleado = txtCCosto.Text
+        Dim fkempleado = txtIdentidad.Text
         Dim precio = txtPrecio.Text
 
-        If horaActual >= 4 And horaActual <= 10 Then
+        If horaActual >= 1 And horaActual <= 10 Then
             comida = "desayuno"
             Try
                 If conexion.insertarConsumo(fechaActual, fkempleado, precio, comida) Then
@@ -51,14 +51,14 @@ Public Class AgregarConsumo
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
-        If txtCCosto.Text = "" Or txtPrecio.Text = "" Then
+        If txtIdentidad.Text = "" Or txtPrecio.Text = "" Then
             MessageBox.Show("Debe ingresar ambos datos para poder registrar su consumoo", "Datos necesarios", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             insertarConsumo()
         End If
     End Sub
 
-    Private Sub txtCCosto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCCosto.KeyPress
+    Private Sub txtCCosto_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtIdentidad.KeyPress
         detectarNumeros(sender, e)
         detectarEspacios(sender, e)
     End Sub
@@ -90,5 +90,10 @@ Public Class AgregarConsumo
             MessageBox.Show("No se permiten los espacios.", "Error!")
             e.Handled = True
         End If
+    End Sub
+
+    Private Sub bntMenu_Click(sender As Object, e As EventArgs) Handles bntMenu.Click
+        Menu.Show()
+        Me.Close()
     End Sub
 End Class

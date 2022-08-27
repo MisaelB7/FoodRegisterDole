@@ -156,16 +156,16 @@ Public Class conexion
         End Try
     End Function
 
-    Public Function insertarEmpleado(idempleado As String, nombre As String, apellido As String, nombreapellido As String, identidad As String, fkdepartamento As String, fktipocontrato As String)
+    Public Function insertarEmpleado(identidad As String, nombre As String, apellido As String, nombreapellido As String, ccosto As String, fkdepartamento As String, fktipocontrato As String)
         Try
             conexion.Open()
             cmb = New SqlCommand("insertar_empleado", conexion)
             cmb.CommandType = CommandType.StoredProcedure
-            cmb.Parameters.AddWithValue("@idempleado", idempleado)
+            cmb.Parameters.AddWithValue("@identidad", identidad)
             cmb.Parameters.AddWithValue("@nombre", nombre)
             cmb.Parameters.AddWithValue("@apellido", apellido)
             cmb.Parameters.AddWithValue("@nombreapellido", nombreapellido)
-            cmb.Parameters.AddWithValue("@identidad", identidad)
+            cmb.Parameters.AddWithValue("@ccosto", ccosto)
             cmb.Parameters.AddWithValue("@fkdepartamento", fkdepartamento)
             cmb.Parameters.AddWithValue("@fktipocontrato", fktipocontrato)
             If cmb.ExecuteNonQuery Then
@@ -181,16 +181,16 @@ Public Class conexion
         End Try
     End Function
 
-    Public Function editarEmpleado(idempleado As String, nombre As String, apellido As String, nombreapellido As String, identidad As String, fkdepartamento As String, fktipocontrato As String)
+    Public Function editarEmpleado(identidad As String, nombre As String, apellido As String, nombreapellido As String, ccosto As String, fkdepartamento As String, fktipocontrato As String)
         Try
             conexion.Open()
             cmb = New SqlCommand("editar_empleado", conexion)
             cmb.CommandType = CommandType.StoredProcedure
-            cmb.Parameters.AddWithValue("@idempleado", idempleado)
+            cmb.Parameters.AddWithValue("@identidad", identidad)
             cmb.Parameters.AddWithValue("@nombre", nombre)
             cmb.Parameters.AddWithValue("@apellido", apellido)
             cmb.Parameters.AddWithValue("@nombreapellido", nombreapellido)
-            cmb.Parameters.AddWithValue("@identidad", identidad)
+            cmb.Parameters.AddWithValue("@ccosto", ccosto)
             cmb.Parameters.AddWithValue("@fkdepartamento", fkdepartamento)
             cmb.Parameters.AddWithValue("@fktipocontrato", fktipocontrato)
             If cmb.ExecuteNonQuery Then
@@ -207,12 +207,12 @@ Public Class conexion
 
     End Function
 
-    Public Function eliminarEmpleado(idempleado As String)
+    Public Function eliminarEmpleado(identidad As String)
         Try
             conexion.Open()
             cmb = New SqlCommand("borrar_empleado", conexion)
             cmb.CommandType = CommandType.StoredProcedure
-            cmb.Parameters.AddWithValue("@idempleado", idempleado)
+            cmb.Parameters.AddWithValue("@identidad", identidad)
             If cmb.ExecuteNonQuery Then
                 Return True
             Else
@@ -232,14 +232,14 @@ Public Class conexion
         Try
             dr = cmb.ExecuteReader()
             If (dr.Read()) Then
-                ccosto.Text = dr("idempleado").ToString
+                identidad.Text = dr("identidad").ToString
                 nombreEmpleado.Text = dr("nombre").ToString()
                 apellidoEmpleado.Text = dr("apellidos").ToString()
-                identidad.Text = dr("identidad").ToString
+                ccosto.Text = dr("ccosto").ToString
                 departamento.SelectedValue = dr("fkDepartamento")
                 tipoContrato.SelectedValue = dr("fkTipoContratos")
             Else
-                MessageBox.Show("Usuario no encontrado, compruebe el id", "Error de búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Empleado no encontrado, compruebe su número de identidad", "Error de búsqueda", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -317,14 +317,14 @@ Public Class conexion
         End Try
     End Function
 
-    Public Function bucarConsumoID(fechaInicial As Date, fechaFinal As Date, ccosto As String) As DataTable
+    Public Function bucarConsumoID(fechaInicial As Date, fechaFinal As Date, identidad As String) As DataTable
         Try
             conexion.Open()
             Dim cmb As New SqlCommand("buscar_consumoIdEmpleado", conexion)
             cmb.CommandType = CommandType.StoredProcedure
             cmb.Parameters.AddWithValue("@fechaInicial", fechaInicial)
             cmb.Parameters.AddWithValue("@fechaFinal", fechaFinal)
-            cmb.Parameters.AddWithValue("@fkempleado", ccosto)
+            cmb.Parameters.AddWithValue("@fkempleado", identidad)
             If cmb.ExecuteNonQuery <> 0 Then
                 Dim dt As New DataTable
                 Dim da As New SqlDataAdapter(cmb)
@@ -349,6 +349,30 @@ Public Class conexion
             cmb.Parameters.AddWithValue("@fechaInicial", fechaInicial)
             cmb.Parameters.AddWithValue("@fechaFinal", fechaFinal)
             cmb.Parameters.AddWithValue("@departamento", departamento)
+            If cmb.ExecuteNonQuery <> 0 Then
+                Dim dt As New DataTable
+                Dim da As New SqlDataAdapter(cmb)
+                da.Fill(dt)
+                Return dt
+            Else
+                Return Nothing
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Return Nothing
+        Finally
+            conexion.Close()
+        End Try
+    End Function
+
+    Public Function bucarConsumoCcosto(fechaInicial As Date, fechaFinal As Date, ccosto As String) As DataTable
+        Try
+            conexion.Open()
+            Dim cmb As New SqlCommand("buscar_consumoCcosto", conexion)
+            cmb.CommandType = CommandType.StoredProcedure
+            cmb.Parameters.AddWithValue("@fechaInicial", fechaInicial)
+            cmb.Parameters.AddWithValue("@fechaFinal", fechaFinal)
+            cmb.Parameters.AddWithValue("@ccosto", ccosto)
             If cmb.ExecuteNonQuery <> 0 Then
                 Dim dt As New DataTable
                 Dim da As New SqlDataAdapter(cmb)

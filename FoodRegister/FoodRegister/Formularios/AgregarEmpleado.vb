@@ -24,11 +24,11 @@ Public Class AgregarEmpleado
         tipocontrato = Convert.ToString(idTipoContrato)
 
 
-        Dim idempleado As String = txtCCosto.Text
+        Dim identidad As String = txtIdentidad.Text
         Dim nombre As String = StrConv(txtNombreEmpleado.Text, VbStrConv.ProperCase)
         Dim apellido As String = StrConv(txtApellidoEmpleado.Text, VbStrConv.ProperCase)
         Dim nombreApellido = nombre + " " + apellido
-        Dim identidad As String = txtIdentidad.Text
+        Dim ccosto As String = txtCCosto.Text
         Dim fkdepartamento = departamento
         Dim fktipocontrato = tipocontrato
 
@@ -36,9 +36,10 @@ Public Class AgregarEmpleado
             MessageBox.Show("Por favor seleccione un departamento.", "No ha seleccionado departamento", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             Try
-                If conexion.insertarEmpleado(idempleado, nombre, apellido, nombreApellido, identidad, fkdepartamento, fktipocontrato) Then
+                If conexion.insertarEmpleado(identidad, nombre, apellido, nombreApellido, ccosto, fkdepartamento, fktipocontrato) Then
 
                     MessageBox.Show("Empleado registrado correctamente", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    limpiar()
                 Else
                     MessageBox.Show("Error al registrar el empleado", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
@@ -52,6 +53,14 @@ Public Class AgregarEmpleado
         insertarEmpleado()
     End Sub
 
+    Private Sub limpiar()
+        txtNombreEmpleado.Clear()
+        txtApellidoEmpleado.Clear()
+        cmbContrato.SelectedValue = 0
+        cmbDepartamento.SelectedValue = 0
+        txtIdentidad.Clear()
+        txtCCosto.Clear()
+    End Sub
     Private Sub editarEmpleado()
         Dim idDepto As Object = cmbDepartamento.SelectedValue
         Dim idTipoContrato As Object = cmbContrato.SelectedValue
@@ -59,11 +68,11 @@ Public Class AgregarEmpleado
         Dim departamento = Convert.ToString(idDepto)
         Dim tipocontrato = Convert.ToString(idTipoContrato)
 
-        Dim idempleado As String = txtCCosto.Text
+        Dim identidad As String = txtIdentidad.Text
         Dim nombre As String = StrConv(txtNombreEmpleado.Text, VbStrConv.ProperCase)
         Dim apellido As String = StrConv(txtApellidoEmpleado.Text, VbStrConv.ProperCase)
         Dim nombreApellido = nombre + " " + apellido
-        Dim identidad As String = txtIdentidad.Text
+        Dim ccosto As String = txtCCosto.Text
         Dim fkdepartamento = departamento
         Dim fktipocontrato = tipocontrato
 
@@ -71,8 +80,9 @@ Public Class AgregarEmpleado
             MessageBox.Show("Por favor seleccione un departamento.", "No ha seleccionado departamento", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             Try
-                If conexion.editarEmpleado(idempleado, nombre, apellido, nombreApellido, identidad, fkdepartamento, fktipocontrato) Then
+                If conexion.editarEmpleado(identidad, nombre, apellido, nombreApellido, ccosto, fkdepartamento, fktipocontrato) Then
                     MessageBox.Show("Empleado actualizado correctamente", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    limpiar()
                 Else
                     MessageBox.Show("Error al editar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 End If
@@ -104,13 +114,11 @@ Public Class AgregarEmpleado
     End Sub
 
     Private Sub eliminarEmpleado()
-
-        Dim idempleado = txtCCosto.Text
-
+        Dim identidad = txtIdentidad.Text
         Try
-            If conexion.eliminarEmpleado(idempleado) Then
+            If conexion.eliminarEmpleado(identidad) Then
                 MessageBox.Show("El Empleado ha sido eliminado.", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
-
+                limpiar()
             Else
                 MessageBox.Show("Error al eliminar el empleado.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
@@ -124,18 +132,17 @@ Public Class AgregarEmpleado
     End Sub
 
     Private Sub buscarEmpleado()
-        Dim idempleado = txtCCosto.Text
-        Dim nombre As String = StrConv(txtNombreEmpleado.Text, VbStrConv.ProperCase)
+        Dim identidad = txtIdentidad.Text
         Dim sql As String
-        sql = "SELECT idempleado, nombre, apellidos, identidad, fkDepartamento, fkTipoContratos From Empleados WHERE IdEmpleado LIKE '%'  +'" + idempleado + "'  + '%' OR Nombre LIKE '%'  + '" + nombre + "' + '%'"
+        sql = "SELECT identidad, nombre, apellidos, ccosto, fkDepartamento, fkTipoContratos From Empleados WHERE identidad =" + identidad
         Try
             conexion.buscarEmpleado(sql, txtCCosto, txtNombreEmpleado, txtApellidoEmpleado, txtIdentidad, cmbDepartamento, cmbContrato)
         Catch ex As Exception
-            MessageBox.Show("Error")
+            MessageBox.Show("Ha ocurrido un error.", "Valor Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
         End Try
     End Sub
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        If txtCCosto.Text = "" And txtNombreEmpleado.Text = "" Then
+        If txtIdentidad.Text = "" Then
             MessageBox.Show("Por favor ingrese el centro de costo del empleado.", "Campo Necesario", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             buscarEmpleado()
@@ -166,4 +173,8 @@ Public Class AgregarEmpleado
         End If
     End Sub
 
+    Private Sub bntMenu_Click(sender As Object, e As EventArgs) Handles bntMenu.Click
+        Menu.Show()
+        Me.Close()
+    End Sub
 End Class

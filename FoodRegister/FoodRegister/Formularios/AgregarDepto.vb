@@ -177,4 +177,9 @@ Public Class AgregarDepto
             e.Handled = True
         End If
     End Sub
+
+    Private Sub bntMenu_Click(sender As Object, e As EventArgs) Handles bntMenu.Click
+        Menu.Show()
+        Me.Close()
+    End Sub
 End Class
