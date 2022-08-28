@@ -145,7 +145,7 @@ Public Class AgregarDepto
         End If
     End Sub
 
-    Private Sub dataListado_Click(sender As Object, e As DataGridViewCellEventArgs) Handles dataListado.CellClick
+    Private Sub dataListado_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dataListado.CellClick
         Dim departamento As String
         Dim fila = dataListado.CurrentRow.Index
         Try
@@ -182,4 +182,5 @@ Public Class AgregarDepto
         Menu.Show()
         Me.Close()
     End Sub
+
 End Class

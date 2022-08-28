@@ -51,7 +51,10 @@ Partial Class ConsultarRegistros
         '
         'dataListado
         '
-        Me.dataListado.AllowUserToOrderColumns = True
+        Me.dataListado.AllowUserToAddRows = False
+        Me.dataListado.AllowUserToDeleteRows = False
+        Me.dataListado.AllowUserToResizeRows = False
+        Me.dataListado.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dataListado.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(201, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(213, Byte), Integer))
         Me.dataListado.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dataListado.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
@@ -83,11 +86,12 @@ Partial Class ConsultarRegistros
         Me.dataListado.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.dataListado.RowHeadersVisible = False
         Me.dataListado.RowHeadersWidth = 51
+        Me.dataListado.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(201, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(213, Byte), Integer))
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Bahnschrift", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(248, Byte), Integer), CType(CType(157, Byte), Integer), CType(CType(19, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         Me.dataListado.RowsDefaultCellStyle = DataGridViewCellStyle3
         Me.dataListado.RowTemplate.Height = 25
