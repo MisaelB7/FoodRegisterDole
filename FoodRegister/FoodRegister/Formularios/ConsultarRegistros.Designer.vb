@@ -326,6 +326,7 @@ Partial Class ConsultarRegistros
         Me.Controls.Add(Me.DTPFechaFinal)
         Me.Controls.Add(Me.DTPFechaInicio)
         Me.Controls.Add(Me.dataListado)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ConsultarRegistros"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ConsultarRegistros"

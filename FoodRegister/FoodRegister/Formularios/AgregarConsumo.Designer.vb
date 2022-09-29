@@ -158,6 +158,7 @@ Partial Class AgregarConsumo
         Me.Controls.Add(Me.txtPrecio)
         Me.Controls.Add(Me.lblIdentidad)
         Me.Controls.Add(Me.txtIdentidad)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "AgregarConsumo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

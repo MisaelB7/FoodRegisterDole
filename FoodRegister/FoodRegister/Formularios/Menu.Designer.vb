@@ -23,6 +23,7 @@ Partial Class Menu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Menu))
         Me.btnEmpleados = New System.Windows.Forms.Button()
         Me.btnConsumo = New System.Windows.Forms.Button()
         Me.btnConsultas = New System.Windows.Forms.Button()
@@ -95,7 +96,7 @@ Partial Class Menu
         Me.titulo.Name = "titulo"
         Me.titulo.Size = New System.Drawing.Size(80, 33)
         Me.titulo.TabIndex = 6
-        Me.titulo.Text = "Menu"
+        Me.titulo.Text = "Menú"
         '
         'logo
         '
@@ -149,6 +150,7 @@ Partial Class Menu
         Me.Controls.Add(Me.btnConsumo)
         Me.Controls.Add(Me.btnEmpleados)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "Menu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

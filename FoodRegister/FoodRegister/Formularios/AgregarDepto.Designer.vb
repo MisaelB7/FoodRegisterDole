@@ -234,6 +234,7 @@ Partial Class AgregarDepto
         Me.Controls.Add(Me.txtNombreDepartamento)
         Me.Controls.Add(Me.lblDepto)
         Me.Controls.Add(Me.Panel1)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "AgregarDepto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
