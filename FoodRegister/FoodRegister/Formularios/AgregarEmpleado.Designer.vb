@@ -262,11 +262,11 @@ Partial Class AgregarEmpleado
         Me.titulo.AutoSize = True
         Me.titulo.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.titulo.ForeColor = System.Drawing.SystemColors.Control
-        Me.titulo.Location = New System.Drawing.Point(196, 13)
+        Me.titulo.Location = New System.Drawing.Point(231, 13)
         Me.titulo.Name = "titulo"
-        Me.titulo.Size = New System.Drawing.Size(347, 33)
+        Me.titulo.Size = New System.Drawing.Size(295, 33)
         Me.titulo.TabIndex = 6
-        Me.titulo.Text = "Registro de Departamentos"
+        Me.titulo.Text = "Registro de Empleados"
         Me.titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'bntMenu
@@ -323,6 +323,7 @@ Partial Class AgregarEmpleado
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.MaximizeBox = False
         Me.Name = "AgregarEmpleado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Empleados"

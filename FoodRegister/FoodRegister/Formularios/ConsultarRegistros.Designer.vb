@@ -261,11 +261,11 @@ Partial Class ConsultarRegistros
         Me.titulo.AutoSize = True
         Me.titulo.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.titulo.ForeColor = System.Drawing.SystemColors.Control
-        Me.titulo.Location = New System.Drawing.Point(515, 16)
+        Me.titulo.Location = New System.Drawing.Point(501, 16)
         Me.titulo.Name = "titulo"
-        Me.titulo.Size = New System.Drawing.Size(275, 33)
+        Me.titulo.Size = New System.Drawing.Size(317, 33)
         Me.titulo.TabIndex = 6
-        Me.titulo.Text = "Registro de Consumo"
+        Me.titulo.Text = "Información de Consumo"
         Me.titulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'logo
@@ -326,7 +326,9 @@ Partial Class ConsultarRegistros
         Me.Controls.Add(Me.DTPFechaFinal)
         Me.Controls.Add(Me.DTPFechaInicio)
         Me.Controls.Add(Me.dataListado)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "ConsultarRegistros"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Registros"
