@@ -162,7 +162,7 @@ Partial Class AgregarConsumo
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "AgregarConsumo"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "AgregarConsumo"
+        Me.Text = "Consumo"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()

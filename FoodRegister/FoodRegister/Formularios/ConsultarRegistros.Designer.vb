@@ -329,7 +329,7 @@ Partial Class ConsultarRegistros
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ConsultarRegistros"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "ConsultarRegistros"
+        Me.Text = "Registros"
         CType(Me.dataListado, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

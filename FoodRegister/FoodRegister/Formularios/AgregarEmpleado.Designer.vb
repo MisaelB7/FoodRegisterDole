@@ -325,7 +325,7 @@ Partial Class AgregarEmpleado
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "AgregarEmpleado"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "AgregarEmpleado"
+        Me.Text = "Empleados"
         CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()

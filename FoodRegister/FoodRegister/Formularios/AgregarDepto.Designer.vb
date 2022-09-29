@@ -238,7 +238,7 @@ Partial Class AgregarDepto
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "AgregarDepto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "AgregarDepto"
+        Me.Text = "Departamentos"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.logo, System.ComponentModel.ISupportInitialize).EndInit()
