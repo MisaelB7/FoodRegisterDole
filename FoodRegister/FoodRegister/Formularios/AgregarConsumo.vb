@@ -16,7 +16,7 @@ Public Class AgregarConsumo
         Dim fkempleado = txtIdentidad.Text
         Dim precio = txtPrecio.Text
 
-        If horaActual >= 1 And horaActual <= 10 Then
+        If horaActual >= 4 And horaActual <= 10 Then
             comida = "desayuno"
             Try
                 If conexion.insertarConsumo(fechaActual, fkempleado, precio, comida) Then
@@ -34,7 +34,7 @@ Public Class AgregarConsumo
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
-        ElseIf horaActual >= 17 And horaActual <= 21 Then
+        ElseIf horaActual >= 17 And horaActual <= 20 Then
             comida = "cena"
             Try
                 If conexion.insertarConsumo(fechaActual, fkempleado, precio, comida) Then

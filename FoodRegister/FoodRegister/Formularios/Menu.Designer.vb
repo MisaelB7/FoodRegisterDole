@@ -41,7 +41,7 @@ Partial Class Menu
         '
         Me.btnEmpleados.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btnEmpleados.Image = Global.FoodRegister.My.Resources.Resources.employee
-        Me.btnEmpleados.Location = New System.Drawing.Point(436, 228)
+        Me.btnEmpleados.Location = New System.Drawing.Point(436, 83)
         Me.btnEmpleados.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnEmpleados.Name = "btnEmpleados"
         Me.btnEmpleados.Size = New System.Drawing.Size(160, 115)
@@ -54,7 +54,7 @@ Partial Class Menu
         '
         Me.btnConsumo.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btnConsumo.Image = Global.FoodRegister.My.Resources.Resources.carrito_de_compras
-        Me.btnConsumo.Location = New System.Drawing.Point(436, 83)
+        Me.btnConsumo.Location = New System.Drawing.Point(156, 228)
         Me.btnConsumo.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.btnConsumo.Name = "btnConsumo"
         Me.btnConsumo.Size = New System.Drawing.Size(160, 115)
@@ -67,7 +67,7 @@ Partial Class Menu
         '
         Me.btnConsultas.Font = New System.Drawing.Font("Bahnschrift", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.btnConsultas.Image = Global.FoodRegister.My.Resources.Resources.search
-        Me.btnConsultas.Location = New System.Drawing.Point(156, 228)
+        Me.btnConsultas.Location = New System.Drawing.Point(436, 228)
         Me.btnConsultas.Name = "btnConsultas"
         Me.btnConsultas.Size = New System.Drawing.Size(160, 115)
         Me.btnConsultas.TabIndex = 2
@@ -92,7 +92,7 @@ Partial Class Menu
         Me.titulo.AutoSize = True
         Me.titulo.Font = New System.Drawing.Font("Bahnschrift", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point)
         Me.titulo.ForeColor = System.Drawing.SystemColors.Control
-        Me.titulo.Location = New System.Drawing.Point(338, 16)
+        Me.titulo.Location = New System.Drawing.Point(335, 16)
         Me.titulo.Name = "titulo"
         Me.titulo.Size = New System.Drawing.Size(80, 33)
         Me.titulo.TabIndex = 6
@@ -132,7 +132,7 @@ Partial Class Menu
         Me.btnDeptos.TabIndex = 0
         Me.btnDeptos.Text = "Departamentos"
         Me.btnDeptos.TextAlign = System.Drawing.ContentAlignment.BottomCenter
-        Me.btnDeptos.UseVisualStyleBackColor = False
+        Me.btnDeptos.UseVisualStyleBackColor = True
         '
         'reloj
         '

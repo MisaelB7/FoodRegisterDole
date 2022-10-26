@@ -123,14 +123,21 @@
         End Try
     End Sub
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
-        If txtIdentidad.Text <> "" Then
-            buscarConsumosID()
-        ElseIf cmbDepartamento.Text <> "Seleccione.." Then
-            buscarConsumosDepto()
-        ElseIf txtCCosto.Text <> "" Then
-            buscarConsumosCcosto
+        Dim fechaInicial, fechaFinal As Date
+        fechaFinal = Format(DTPFechaFinal.Value, "yyyy/MM/dd")
+        fechaInicial = Format(DTPFechaInicio.Value, "yyyy/MM/dd")
+        If fechaInicial > fechaFinal Then
+            MessageBox.Show("La fecha de inicio debe ser menor o igual a la fecha final.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
         Else
-            buscarConsumosFechas()
+            If txtIdentidad.Text <> "" Then
+                buscarConsumosID()
+            ElseIf cmbDepartamento.Text <> "Seleccione.." Then
+                buscarConsumosDepto()
+            ElseIf txtCCosto.Text <> "" Then
+                buscarConsumosCcosto()
+            Else
+                buscarConsumosFechas()
+            End If
         End If
     End Sub
 

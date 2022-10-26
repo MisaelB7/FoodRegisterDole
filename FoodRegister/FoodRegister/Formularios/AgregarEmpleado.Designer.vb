@@ -109,7 +109,6 @@ Partial Class AgregarEmpleado
         Me.txtCCosto.Location = New System.Drawing.Point(553, 210)
         Me.txtCCosto.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtCCosto.Name = "txtCCosto"
-        Me.txtCCosto.PlaceholderText = "10100101"
         Me.txtCCosto.Size = New System.Drawing.Size(185, 36)
         Me.txtCCosto.TabIndex = 6
         '
@@ -132,7 +131,6 @@ Partial Class AgregarEmpleado
         Me.txtNombreEmpleado.Location = New System.Drawing.Point(157, 85)
         Me.txtNombreEmpleado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtNombreEmpleado.Name = "txtNombreEmpleado"
-        Me.txtNombreEmpleado.PlaceholderText = "Juan"
         Me.txtNombreEmpleado.Size = New System.Drawing.Size(185, 36)
         Me.txtNombreEmpleado.TabIndex = 1
         '
@@ -155,7 +153,6 @@ Partial Class AgregarEmpleado
         Me.txtApellidoEmpleado.Location = New System.Drawing.Point(553, 85)
         Me.txtApellidoEmpleado.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtApellidoEmpleado.Name = "txtApellidoEmpleado"
-        Me.txtApellidoEmpleado.PlaceholderText = "Ortega"
         Me.txtApellidoEmpleado.Size = New System.Drawing.Size(185, 36)
         Me.txtApellidoEmpleado.TabIndex = 2
         '
@@ -178,7 +175,6 @@ Partial Class AgregarEmpleado
         Me.txtIdentidad.Location = New System.Drawing.Point(157, 210)
         Me.txtIdentidad.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.txtIdentidad.Name = "txtIdentidad"
-        Me.txtIdentidad.PlaceholderText = "0101199900001"
         Me.txtIdentidad.Size = New System.Drawing.Size(185, 36)
         Me.txtIdentidad.TabIndex = 5
         '

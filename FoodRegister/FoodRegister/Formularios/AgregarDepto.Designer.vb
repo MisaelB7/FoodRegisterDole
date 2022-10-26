@@ -166,7 +166,7 @@ Partial Class AgregarDepto
         Me.logo.BackColor = System.Drawing.Color.Transparent
         Me.logo.BackgroundImage = Global.FoodRegister.My.Resources.Resources.Dole_2018
         Me.logo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.logo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.logo.Cursor = System.Windows.Forms.Cursors.Default
         Me.logo.Location = New System.Drawing.Point(644, 3)
         Me.logo.Name = "logo"
         Me.logo.Size = New System.Drawing.Size(96, 64)

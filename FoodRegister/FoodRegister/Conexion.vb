@@ -1,8 +1,8 @@
 ﻿Imports System.Data
 Imports System.Data.SqlClient
 Imports System.Windows.Forms
-Public Class conexion
-    Public conexion As SqlConnection = New SqlConnection("Data Source= FLAXTAC-LAPTOP; Initial Catalog=FoodRegister; Integrated Security=True")
+Public Class Conexion
+    Public conexion As New SqlConnection("Data Source= FLAXTAC-LAPTOP; Initial Catalog=FoodRegister; Integrated Security=True")
     Private cmba As SqlCommandBuilder
     Public ds As DataSet = New DataSet()
     Public da As SqlDataAdapter

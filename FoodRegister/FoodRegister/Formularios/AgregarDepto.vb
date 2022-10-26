@@ -55,9 +55,9 @@ Public Class AgregarDepto
         Try
             If conexion.insertarDepartamento(departamento) Then
                 limpiar()
-                MessageBox.Show("Departamento ingresado correctamente", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Departamento ingresado correctamente.", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
-                MessageBox.Show("Error al guardar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Error al registrar", "Incorrecto", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -114,9 +114,9 @@ Public Class AgregarDepto
 
         Try
             If conexion.editarDepartamento(iddepartamento, departamento) Then
-                MessageBox.Show("Departamento editado correctamente", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Departamento editado correctamente.", "Hecho!", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
-                MessageBox.Show("No se ha podido editar el departamento", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("No se ha podido editar el departamento.", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error)
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
