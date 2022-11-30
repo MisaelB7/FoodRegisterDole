@@ -34,7 +34,7 @@ Public Class AgregarConsumo
             Catch ex As Exception
                 MsgBox(ex.Message)
             End Try
-        ElseIf horaActual >= 17 And horaActual <= 20 Then
+        ElseIf horaActual >= 17 And horaActual <= 23 Then
             comida = "cena"
             Try
                 If conexion.insertarConsumo(fechaActual, fkempleado, precio, comida) Then
@@ -51,7 +51,7 @@ Public Class AgregarConsumo
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs) Handles btnRegistrar.Click
-        If txtIdentidad.Text = "" Or txtPrecio.Text = "" Then
+        If txtIdentidad.Text = "" Or txtPrecio.Text = "" Or txtPrecio.Text <= 0 Then
             MessageBox.Show("Debe ingresar ambos datos para poder registrar su consumoo", "Datos necesarios", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         Else
             insertarConsumo()

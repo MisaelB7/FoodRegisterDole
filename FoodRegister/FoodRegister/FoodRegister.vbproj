@@ -7,7 +7,7 @@
     <StartupObject>Sub Main</StartupObject>
     <UseWindowsForms>true</UseWindowsForms>
     <MyType>WindowsForms</MyType>
-    <ApplicationIcon></ApplicationIcon>
+    <ApplicationIcon>Resources\Icono Dole_2018.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
